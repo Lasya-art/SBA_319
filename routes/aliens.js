@@ -19,12 +19,12 @@ router.get("/:id", async (req, res) => {
         const alien = await Alien.findById(id); // Try to find the alien by its ID
 
         if (alien) {
-            res.status(200).json(alien); // If the alien exists, return it
+            res.status(200).json(alien); 
         } else {
-            res.status(404).json({ message: "Alien not found in the database." }); // If not found, return this message
+            res.status(404).json({ message: "Alien not found in the database." }); 
         }
     } catch (err) {
-        // Handle cases like invalid IDs or other errors
+        
         res.status(500).json({ message: "An error occurred while searching for the alien.", error: err.message });
     }
 });
