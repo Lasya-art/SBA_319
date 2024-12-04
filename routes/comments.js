@@ -20,7 +20,7 @@ router.post('/', async (req, res) => {
 });
 
 
-router.get('/:alienId', async (req, res) => {
+router.get('/comments/:alienId', async (req, res) => {
     try {
         const comments = await Comment.find({ postId: req.params.alienId }).populate('userId', 'name email');
         res.status(200).json(comments);
